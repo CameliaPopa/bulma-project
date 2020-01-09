@@ -10,7 +10,9 @@ $black: #000000;
 $orange-action-button: #FF7A59;
 $dark-blue: #506E91;
 $top-buttons-text-color: #DEDFDE;
+$input-background-color: #EBEBEB;
 $footer:#33475B;
+$nav-dashboard:#152E4B;
 
 // Body
 $body-bg: #FFFFFF;
@@ -23,7 +25,9 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 $grey-light: $social-gray;
+$grey-lighter: $input-background-color;
 $grey-dark: $social-text;
+$grey-darker: $nav-dashboard;
 $black: $black;
 $warning: $orange-action-button;
 $link: $dark-blue;
@@ -46,8 +50,6 @@ $input-shadow: none;
 @import "../node_modules/bulma/sass/layout/_all.sass";
 @import "../node_modules/bulma/sass/grid/_all.sass";
 
-/*START _front_variables.scss*/
-
 // Colors
 
 $white: #ffffff;
@@ -58,8 +60,6 @@ $header-blue: #2C87EA;
 // Margins
 $no-margin: 0 auto;
 $margin-auto: auto;
-
-/*END _front_variables.scss*/
 
 // Costumize
 //global-classes
@@ -132,55 +132,57 @@ nav {box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);}
         }
     }
 }
-
-.navbar {
-    padding-left: 120px;
-    padding-right: 120px;
-    .navbar-brand {
-        .navbar-item {
-            img {
-                max-height: 100%;
+@media screen and (min-width: 769px) {
+    .navbar-style {
+        padding-left: 120px;
+        padding-right: 120px;
+        .navbar-brand {
+            .navbar-item {
+                img {
+                    max-height: 100%;
+                }
             }
         }
-    }
-    .navbar-menu {
-        .navbar-end {
-            .item-hover {
-                margin-left: 35px;
-                margin-top: 30px;
-                text-decoration: none;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 17px;
-                &:hover {
-                    color: $orange-action-button;
+        .navbar-menu {
+            .navbar-end {
+                .item-hover {
+                    margin-left: 35px;
+                    margin-top: 30px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    color: $black;
+                    &:hover {
+                        color: $orange-action-button;
+                    }
+                    &:after {
+                        content: '';
+                        left: 0;
+                        display: inline-flex;
+                        height: 2px;
+                        width: 100%;
+                        border-bottom: 2px solid;
+                        margin-top: -6px;
+                        opacity: 0;
+                        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                        transition: opacity 0.35s, transform 0.35s;
+                        -webkit-transform: scale(0, 1);
+                        transform: scale(0, 1);
+                    }
+                    &:hover:after {
+                        opacity: 1;
+                        -webkit-transform: scale(1);
+                        transform: scale(1);
+                    }
                 }
-                &:after {
-                    content: '';
-                    left: 0;
-                    display: inline-flex;
-                    height: 2px;
-                    width: 100%;
-                    border-bottom: 2px solid;
-                    margin-top: -6px;
-                    opacity: 0;
-                    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-                    transition: opacity 0.35s, transform 0.35s;
-                    -webkit-transform: scale(0, 1);
-                    transform: scale(0, 1);
-                }
-                &:hover:after {
-                    opacity: 1;
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                }
-            }
-            .navbar-item {
-                .buttons {
-                    .button {
-                        height: 44px;
-                        width: 133px;
-                        margin-left: 30px;
+                .navbar-item {
+                    .buttons {
+                        .button {
+                            height: 44px;
+                            width: 133px;
+                            margin-left: 30px;
+                        }
                     }
                 }
             }
@@ -310,12 +312,14 @@ nav {box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);}
                 background: linear-gradient(90deg, #03B8AA 0%, #02A9BA 100%);
                 box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.308867);
                 padding: 50px 150px;
-                .field {
-                    .control {
-                        .button-subscribe {
-                            margin-top: 29px;
-                            height: 40px;
-                            width: 180px;
+            }
+            .column {
+                .columns {
+                    .column {
+                        .control {
+                            .button-subscribe {
+                                margin-top: 32px;
+                            }
                         }
                     }
                 }
@@ -347,6 +351,7 @@ nav {box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);}
 					.image-costumize {
 						margin-bottom: -40px;
 						margin-top: 40px;
+                        margin-left: -70px;
 					}
 				}
 				.image-position {
@@ -360,4 +365,64 @@ nav {box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);}
             }
         }
 	}
+}
+
+/*CONTACT*/
+.button-shadow {box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.14);}
+
+.input-shadow {box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.03);}
+
+.contact-background {
+    //background-image: url("images/OAV9A90 1.png");
+    //background: linear-gradient(180deg, #FBA96E 0%, rgba(76, 198, 251, 0.5) 100%);
+}
+
+/*LOGIN*/
+.login-background {
+    //background-image: url("images/clouds 1.png");
+    //background: linear-gradient(180deg, rgba(255, 118, 60, 0.7) 0%, rgba(83, 160, 250, 0.7) 100%);
+}
+
+.text-pass {text-decoration-line: underline;}
+
+.section {
+    .container {
+        .columns {
+            .column {
+                .field {
+                    .control{
+                        .input-login {
+                            height: 49px;
+                            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.11);
+                            border:none;
+                        }
+                        .button-login {
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Mobile*/
+.navbar-burger {
+    margin-top: 10px;
+}
+.is-active {
+    .item-hover {
+        color: $black;
+        display: flex;
+        margin: 20px;
+    }
+}
+.navbar-style {
+    .navbar-brand {
+        .navbar-item {
+            img {
+                max-height: 100%;
+            }
+        }
+    }
 }
