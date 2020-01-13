@@ -496,12 +496,19 @@ nav {box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);}
     }
 }
 
-/*Mobile*/
-/*
-.is-active {
-    .item-hover {
-        color: $black;
-        display: flex;
-        margin: 20px;
+/*Dashboard*/
+.navbar {
+    .navbar-item {
+        margin-right: 50px;
+        .panel-style {
+            width: 550px;
+        }
     }
-}*/
+    .navbar-brand {
+        .navbar-item {
+            img {
+                max-height: 100%;
+            }
+        }
+    }
+}
